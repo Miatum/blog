@@ -1,0 +1,41 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #23262E;
+    height: 90px;
+    width: 100%;
+}
+.logo{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    line-height: 90px;
+    text-align: center;
+    color: #009688;
+    font-size: 16px;
+}
+nav{
+    position: fixed;
+    top: 90px;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    background: #393D49;
+}
+main{
+    position: fixed;
+    top: 90px;
+    right: 0;
+    left: 200px;
+    padding: 5px;
+}
+main .tool{
+    padding: 10px 48px;
+}
+#editor li,ul{
+    list-style: initial;
+}

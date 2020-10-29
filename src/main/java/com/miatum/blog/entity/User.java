@@ -1,9 +1,9 @@
 package com.miatum.blog.entity;
 
 public class User {
-    int id;
-    String name;
-    String password;
+    private int id;
+    private String name;
+    private String password;
     public User(){}
     public User(int id,String name,String password){
         this.id=id;
@@ -36,6 +36,10 @@ public class User {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "{"+
+                "id:"+this.id+","+
+                "name:"+this.name+","+
+                "password:"+this.password+
+                "}";
     }
 }
