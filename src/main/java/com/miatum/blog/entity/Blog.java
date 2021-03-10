@@ -1,12 +1,8 @@
 package com.miatum.blog.entity;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
-
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 public class Blog {
     private int id;
     private String title;
@@ -21,49 +17,48 @@ public class Blog {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
     private String content;
-
-    public Blog(){}
-    public Blog(int id,String title,int type_id,int tag_id,String author,Date date,String content){
-        this.id=id;
-        this.title=title;
-        this.type_id=type_id;
-        this.tag_id=tag_id;
-        this.author=author;
-        this.date=date;
-        this.content=content;
+    public Blog () {}
+    public Blog (int id, String title, int type_id, int tag_id, String author, Date date, String content) {
+        this.id = id;
+        this.title = title;
+        this.type_id = type_id;
+        this.tag_id = tag_id;
+        this.author = author;
+        this.date = date;
+        this.content = content;
     }
-    public int getId() {
+    public int getId () {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId (int id) {
         this.id = id;
     }
 
-    public String getTitle() {
+    public String getTitle () {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle (String title) {
         this.title = title;
     }
 
-    public String getIntro() {
+    public String getIntro () {
         return intro;
     }
 
-    public void setIntro(String intro) {
+    public void setIntro (String intro) {
         this.intro = intro;
     }
-    public String getCover() {
+    public String getCover () {
         return cover;
     }
 
-    public void setCover(String cover) {
+    public void setCover (String cover) {
         this.cover = cover;
     }
 
-    public int getType_id() {
+    public int getType_id () {
         return type_id;
     }
 
@@ -131,7 +126,7 @@ public class Blog {
                 "tag_id:"+this.tag_id+","+
                 "author:"+this.author+","+
                 "date:"+this.date+","+
-                "content:"+this.content+","+
+                "content:"+this.content+
                 "}";
     }
 }
