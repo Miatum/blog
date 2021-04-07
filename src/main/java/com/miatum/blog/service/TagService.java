@@ -11,25 +11,25 @@ import java.util.List;
 public class TagService {
     @Autowired
     private TagMapper tagMapper;
-    public Tag selectTagById (int id) {
+    public Tag selectTagById(int id) {
         return tagMapper.selectTagById(id);
     }
-    public List<Tag> selectAllTag () {
+    public List<Tag> selectAllTag() {
         return tagMapper.selectAllTag();
     }
-    public int updateTag (Tag tag) {
+    public int updateTag(Tag tag) {
         return tagMapper.updateTag(tag);
     }
-    public int deleteTag (int id) {
+    public int deleteTag(int id) {
         return tagMapper.deleteTag(id);
     }
-    public int deleteTags (int[] ids) {
+    public int deleteTags(int[] ids) {
         return tagMapper.deleteTags(ids);
     }
-    public int insertTag (Tag tag) {
+    public int insertTag(Tag tag) {
         return tagMapper.insertTag(tag);
     }
-    public int lastInsertId () {
+    public int lastInsertId() {
         return tagMapper.lastInsertId();
     }
 }

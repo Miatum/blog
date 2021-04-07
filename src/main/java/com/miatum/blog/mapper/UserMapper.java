@@ -11,8 +11,8 @@ import java.util.List;
 
 @Repository
 public interface UserMapper {
-    @Select("select * from user where id = #{id}")
-    User selectUserById (int id);
+    @Select("select * from user where name = #{name}")
+    User selectUserByName (String name);
     @Select("select * from user")
     List<User> selectAllUser ();
     @Update("update user set name = #{name}, password = #{password} where id = #{id}")

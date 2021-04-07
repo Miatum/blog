@@ -6,24 +6,50 @@ import java.util.List;
 @Repository
 public interface BlogMapper {
     // 查询所有博客
-    @Select("select blog.*, type.type_name, tag.tag_name from blog \n" +
-            "left join type on blog.type_id = type.id\n" +
-            "left join tag on blog.tag_id = tag.id")
+    @Select("select blog.*, type.type_name, tag.tag_name, state.state_name from blog \n" +
+            "left join type on blog.type_id = type.id \n" +
+            "left join tag on blog.tag_id = tag.id \n" +
+            "left join state on blog.state_id = state.id")
     List<Blog> selectAllBlog();
+    // 查询Featured博客
+    @Select("select blog.*, type.type_name, tag.tag_name, state.state_name from blog \n" +
+            "left join type on blog.type_id = type.id \n" +
+            "left join tag on blog.tag_id = tag.id \n" +
+            "left join state on blog.state_id = state.id \n" +
+            "where blog.featured = 1")
+    List<Blog> selectFeaturedBlog();
+    // 查询公开博客
+    @Select("select blog.*, type.type_name, tag.tag_name, state.state_name from blog \n" +
+            "left join type on blog.type_id = type.id \n" +
+            "left join tag on blog.tag_id = tag.id \n" +
+            "left join state on blog.state_id = state.id \n" +
+            "where blog.state_id = 2")
+    List<Blog> selectPublicBlog();
     // 传入分类ID查询博客
-    @Select("select blog.*, type.type_name, tag.tag_name from blog \n" +
-            "left join type on blog.type_id = type.id\n" +
-            "left join tag on blog.tag_id = tag.id\n" +
+    @Select("select blog.*, type.type_name, tag.tag_name, state.state_name from blog \n" +
+            "left join type on blog.type_id = type.id \n" +
+            "left join tag on blog.tag_id = tag.id \n" +
+            "left join state on blog.state_id = state.id \n" +
             "where blog.type_id = #{typeId}")
     List<Blog> selectBlogByTypeId(int typeId);
-    // 传入博客ID查询博客
-    @Select("select blog.*, type.type_name, tag.tag_name from blog \n" +
+    // 传入分类ID查询Public博客
+    @Select("select blog.*, type.type_name, tag.tag_name, state.state_name from blog \n" +
             "left join type on blog.type_id = type.id\n" +
             "left join tag on blog.tag_id = tag.id\n" +
+            "left join state on blog.state_id = state.id \n" +
+            "where blog.type_id = #{typeId} and blog.state_id = 2")
+    List<Blog> selectPublicBlogByTypeId(int typeId);
+    // 传入博客ID查询博客
+    @Select("select blog.*, type.type_name, tag.tag_name, state.state_name from blog \n" +
+            "left join type on blog.type_id = type.id\n" +
+            "left join tag on blog.tag_id = tag.id\n" +
+            "left join state on blog.state_id = state.id \n" +
             "where blog.id = #{id}")
     Blog selectBlogById (int id);
     // 更新博客
-    @Update("update blog set title = #{title},intro = #{intro},cover = #{cover},type_id = #{type_id},tag_id = #{tag_id},author = #{author},date = #{date},content = #{content} where id = #{id}")
+    @Update("update blog set state_id = #{state_id}, title = #{title},intro = #{intro},cover = #{cover}," +
+            "type_id = #{type_id},tag_id = #{tag_id},author = #{author},date = #{date}," +
+            "resource_path = #{resource_path}, content = #{content}, featured = #{featured} where id = #{id}")
     int updateBlog (Blog blog);
     // 传入ID删除博客
     @Delete("delete from blog where id=#{id}")
@@ -40,7 +66,7 @@ public interface BlogMapper {
     })
     int deleteBlogs (@Param("ids") int[] ids);
     //  新增博客
-    @Insert("insert into blog values(null, #{title}, #{intro}, #{cover}, #{type_id}, #{tag_id}, #{author}, #{date}, #{content})")
+    @Insert("insert into blog values(null, #{state_id}, #{title}, #{intro}, #{cover}, #{type_id}, #{tag_id}, #{author}, #{date}, #{content}, #{resource_path}, #{featured})")
     int insertBlog(Blog blog);
     //  LAST_INSERT_ID ()
     @Select("select LAST_INSERT_ID()")

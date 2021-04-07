@@ -20,7 +20,7 @@ public class FileUploadController {
     public JSONObject savePicByFormData(@RequestParam("image") MultipartFile image) throws IOException {
         String filename = fileUploadService.savePicByFormData(image);
         JSONObject jsonObject = new JSONObject();
-        String url = "http://localhost:8082/"+filename;
+        String url = "http://localhost:9001/"+filename;
         jsonObject.put("success",1);
         jsonObject.put("message","上传成功");
         jsonObject.put("url",url);

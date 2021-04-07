@@ -8,8 +8,8 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserMapper userMapper;
-    public User selectUserById (Integer id) {
-        return userMapper.selectUserById(id);
+    public User selectUserByName (String name) {
+        return userMapper.selectUserByName(name);
     }
     public List<User> selectAllUser () {
         return userMapper.selectAllUser();

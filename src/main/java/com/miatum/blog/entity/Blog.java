@@ -8,11 +8,15 @@ public class Blog {
     private String title;
     private String intro;
     private String cover;
+    private int state_id;
+    private String state_name;
     private int type_id;
     private String type_name;
     private int tag_id;
     private String tag_name;
     private String author;
+    private String resource_path;
+    private int featured;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
@@ -56,6 +60,21 @@ public class Blog {
 
     public void setCover (String cover) {
         this.cover = cover;
+    }
+
+    public int getState_id() {
+        return state_id;
+    }
+    public void setState_id(int state_id) {
+        this.state_id = state_id;
+    }
+
+    public String getState_name() {
+        return state_name;
+    }
+
+    public void setState_name(String state_name) {
+        this.state_name = state_name;
     }
 
     public int getType_id () {
@@ -115,6 +134,21 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getResource_path() {
+        return resource_path;
+    }
+    public void setResource_path(String resurce_path) {
+        this.resource_path = resurce_path;
+    }
+
+    public int getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(int featured) {
+        this.featured = featured;
     }
 
     @Override

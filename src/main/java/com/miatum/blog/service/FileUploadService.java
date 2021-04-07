@@ -5,8 +5,6 @@ import java.io.*;
 import java.util.UUID;
 @Service
 public class FileUploadService {
-    // 开发路径
-    //private String path = "G:\\IDEA\\blog\\src\\main\\resources\\static\\pic\\blogpic";
     // 图片服务器
     private String path = "E:\\BlogPicServer";
     public String savePicByFormData (MultipartFile file) throws IOException {
