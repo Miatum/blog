@@ -4,10 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.miatum.blog.entity.Blog;
 import com.miatum.blog.service.BlogService;
+import com.miatum.blog.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Controller
@@ -15,6 +17,8 @@ import java.util.List;
 public class BlogController {
     @Autowired
     private BlogService blogService;
+    @Resource
+    private RedisUtil redisUtil;
     @RequestMapping("/selectAllBlog")
     @ResponseBody
     public List<Blog> selectAllBlog() {

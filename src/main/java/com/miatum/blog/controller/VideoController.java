@@ -1,6 +1,6 @@
 package com.miatum.blog.controller;
 
-import com.miatum.blog.service.VideoUtil;
+import com.miatum.blog.util.VideoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

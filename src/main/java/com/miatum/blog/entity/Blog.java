@@ -1,9 +1,13 @@
 package com.miatum.blog.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-public class Blog {
+import java.util.Hashtable;
+
+public class Blog implements Serializable {
     private int id;
     private String title;
     private String intro;

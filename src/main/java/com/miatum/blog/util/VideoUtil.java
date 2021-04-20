@@ -1,4 +1,4 @@
-package com.miatum.blog.service;
+package com.miatum.blog.util;
 import org.bytedeco.javacpp.avcodec;
 import org.bytedeco.javacv.*;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import java.io.File;
 @Service
 public class VideoUtil {
     /**
-     * @Description 获取视频时长
+     * @Description 如果音视频都需要转码，耗时过长
      * @Param video 视频文件, duration 视频时长
      * @return long 视频时长
      * @Author Miatum

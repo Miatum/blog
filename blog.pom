@@ -113,6 +113,17 @@
         <artifactId>ffmpeg-platform</artifactId>
         <version>4.1-1.4.4</version>
         </dependency>
+        <!--java email-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <!--redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+            <version>1.4.1.RELEASE</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
