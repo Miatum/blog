@@ -1,4 +1,4 @@
-package com.miatum.blog.service;
+package com.miatum.blog.util;
 
 import com.miatum.blog.entity.Email;
 import com.miatum.blog.entity.ResponseEnum;

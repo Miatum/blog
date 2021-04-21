@@ -1,10 +1,10 @@
-package com.miatum.blog.service;
+package com.miatum.blog.util;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.UUID;
 @Service
-public class FileUploadService {
+public class FileUploadUtil {
     // 图片服务器
     private String path = "E:\\BlogPicServer";
     public String savePicByFormData (MultipartFile file) throws IOException {

@@ -3,7 +3,7 @@ package com.miatum.blog.controller;
 import com.miatum.blog.entity.Blog;
 import com.miatum.blog.entity.Email;
 import com.miatum.blog.entity.ResponseEnum;
-import com.miatum.blog.service.EmailUtil;
+import com.miatum.blog.util.EmailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
