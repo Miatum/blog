@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashSet;
 import java.util.List;
 @Controller
 @RequestMapping("/api/type/")
@@ -16,7 +18,7 @@ public class TypeController {
     private TypeService typeService;
     @RequestMapping("/selctAllType")
     @ResponseBody
-    public List<Type> selectAllType () {
+    public HashSet<Type> selectAllType () {
         return typeService.selectAllType();
     }
     @RequestMapping("/deleteType")

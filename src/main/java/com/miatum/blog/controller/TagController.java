@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashSet;
 import java.util.List;
 @Controller
 @RequestMapping ("/api/tag/")
@@ -16,7 +18,7 @@ public class TagController {
     private TagService tagService;
     @RequestMapping("/selctAllTag")
     @ResponseBody
-    public List<Tag> selectAllTag () {
+    public HashSet<Tag> selectAllTag () {
         return tagService.selectAllTag();
     }
     @RequestMapping("/deleteTag")

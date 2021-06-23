@@ -11,7 +11,6 @@ public enum ResponseEnum {
     public int getCode() {
         return code;
     }
-
     public String getMessage() {
         return message;
     }

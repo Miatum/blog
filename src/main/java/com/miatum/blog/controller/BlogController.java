@@ -7,6 +7,7 @@ import com.miatum.blog.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import java.util.HashSet;
 import java.util.List;
 
 @Controller
@@ -16,27 +17,27 @@ public class BlogController {
     private BlogService blogService;
     @RequestMapping("/selectAllBlog")
     @ResponseBody
-    public List<Blog> selectAllBlog() {
+    public HashSet<Blog> selectAllBlog() {
         return blogService.selectAllBlog();
     }
     @RequestMapping("/selectFeaturedBlog")
     @ResponseBody
-    public List<Blog> selectFeaturedBlog() {
+    public HashSet<Blog> selectFeaturedBlog() {
         return blogService.selectFeaturedBlog();
     }
     @RequestMapping("/selectPublicBlog")
     @ResponseBody
-    public List<Blog> selectPublicBlog() {
+    public HashSet<Blog> selectPublicBlog() {
         return blogService.selectPublicBlog();
     }
     @RequestMapping("/selectBlogByTypeId")
     @ResponseBody
-    public List<Blog> selectBlogByTypeId(int typeId) {
+    public HashSet<Blog> selectBlogByTypeId(int typeId) {
         return blogService.selectBlogByTypeId(typeId);
     }
     @RequestMapping("/selectPublicBlogByTypeId")
     @ResponseBody
-    public List<Blog> selectPublicBlogByTypeId(int typeId) {
+    public HashSet<Blog> selectPublicBlogByTypeId(int typeId) {
         return blogService.selectPublicBlogByTypeId(typeId);
     }
     @RequestMapping("/selectBlogById")

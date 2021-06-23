@@ -4,6 +4,7 @@ import com.miatum.blog.entity.Type;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashSet;
 import java.util.List;
 
 @Repository
@@ -11,7 +12,7 @@ public interface TypeMapper {
     @Select("select * from type where id = #{id}")
     Type selectTypeById(int id);
     @Select("select * from type")
-    List<Type> selectAllType();
+    HashSet<Type> selectAllType();
     @Update("update type set type_name = #{type_name}, type_name_en = #{type_name_en} where id = #{id}")
     int updateType(Type type);
     @Delete("delete from type where id = #{id}")
